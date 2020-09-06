@@ -7,7 +7,7 @@ import './Searching.css';
 const ARRAY_BARS = 19;
 const BASE_COLOR = 'blue';
 const FOUND_COLOR = '#32CD32';
-const NOT_FOUND_COLOR = 'red';
+//const NOT_FOUND_COLOR = 'red';
 const ANIMATION_SPEED_SECONDS = 3;
 
 class BinarySearch extends Component {

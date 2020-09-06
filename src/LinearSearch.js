@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 import SearchingTiles from "./SearchingTiles";
 import "./LinearSearch.css";
 import { RandomInt } from "./RandomInt";
@@ -39,7 +39,8 @@ export default class LinearSearch extends React.Component {
     let animations = [];
     for (let i = 0; i < array.length; i++) {
       const [ele,index,found]=array[i];
-
+       found=false;
+       index=1;
       const tar = parseInt(target);
       if (ele === tar) {
         animations.push([i, ele, true]);
@@ -96,11 +97,13 @@ export default class LinearSearch extends React.Component {
 
   //main function linear search
   LinearSearch() {
-    var msg = "";
+    
+    let msg = "";
     const target = document.getElementById("target").value;
     if (target === "") {
       return undefined;
     }
+    // eslint-disable-next-line
     const animations = this.linearSearchAnimations(this.state.array, target);
     console.log(animations);
     //console.log(newa);
@@ -113,7 +116,7 @@ export default class LinearSearch extends React.Component {
       const barStyle=bar.style;
      if(found)
      {  
-     msg=`${value} found at index ${index}`;
+      msg= msg = `${target} found at index ${mid}`;
      setTimeout(()=>{
      this.setState(
        { 
@@ -176,7 +179,8 @@ export default class LinearSearch extends React.Component {
   //     start: false,
   //     completed: false
   render() {
-    const {array,message,disabled,found,findex,target,start,completed}=this.state;
+    const {array,message,found,start,completed}=this.state;
+     
     //const { array } = this.state;
     console.log(completed);
     return (

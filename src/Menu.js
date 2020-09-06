@@ -17,7 +17,7 @@ export default class Menu extends React.Component {
     <div className="inner container ">
       <h3 className="masthead-brand">AlgoViz</h3>
       <nav className="nav nav-masthead justify-content-center">
-        <a className="nav-link active" href="#">Home</a>
+        <a className="nav-link active" href="/">Home</a>
         {/* <a className="nav-link" href="#">Features</a> */}
         <NavLink className="nav-link" to="/searching">Searching </NavLink>
         <a className="nav-link" href="/algolist"> Algortihms</a>
