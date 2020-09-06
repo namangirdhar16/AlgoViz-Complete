@@ -71,7 +71,8 @@ export default class LinearSearch extends React.Component {
     // }
     const previousArray = document.getElementsByClassName("linear-array-bar");
     for (let index = 0; index < previousArray.length; index++) {
-      previousArray[index].style.backgroundColor = "purple";
+      previousArray[index].style.backgroundColor = "blue";
+      previousArray[index].classList.remove("grad");
       previousArray[index].classList.remove("growFind");
       previousArray[index].classList.remove("highlight");
     }
@@ -117,7 +118,7 @@ export default class LinearSearch extends React.Component {
      this.setState(
        { 
          found:true,
-         disabled:true,
+         disabled:false,
         findex:index,
         completed:true,
        target:value,
@@ -126,10 +127,11 @@ export default class LinearSearch extends React.Component {
 
        }
      );
-     barStyle.backgroundColor="green";
+     bar.classList.remove("grad");
+     barStyle.backgroundColor="#32CD32";
      bar.classList.add("growFind");
      bar.classList.add("highlight");
-     },i*200);
+     },i*400);
      }
      else
      {  let completed=false;
@@ -141,7 +143,7 @@ export default class LinearSearch extends React.Component {
       this.setState(
         { 
           found:false,
-          disabled:false,
+          disabled:true,
          message:msg,
          completed:completed,
         //target:value,
@@ -149,10 +151,11 @@ export default class LinearSearch extends React.Component {
  
         }
       );
-      barStyle.backgroundColor="red";
+      bar.classList.add("grad");
+      // barStyle.backgroundColor="red";
       bar.classList.add("growFind");
       //bar.classList.add("highlight");
-      },i*200);
+      },i*400);
      }
     
     }
@@ -177,44 +180,108 @@ export default class LinearSearch extends React.Component {
     //const { array } = this.state;
     console.log(completed);
     return (
-      <div>
-        <input type="text" placeholder="enter index number" id="target" />
-        <button
-          onClick={() => {
-            this.Arrayreset();
-          }}
-        >
-          Reset Array
-        </button>
-        <button
-        disabled={found?false:true}
-          onClick={() => {
-            this.LinearSearch();
-          }}
-        >
-          temp
-        </button>
-        { completed?<h1>{message}</h1>:null}
+      // <div>
+      //   <input type="text" placeholder="enter index number" id="target" />
+      //   <button
+      //     onClick={() => {
+      //       this.Arrayreset();
+      //     }}
+      //   >
+      //     Reset Array
+      //   </button>
+      //   <button
+      //   disabled={found?false:true}
+      //     onClick={() => {
+      //       this.LinearSearch();
+      //     }}
+      //   >
+      //     Search
+      //   </button>
+      //   { completed?<h1>{message}</h1>:null}
 
-        <div className="container">
-          {array.map(function (item) {
-            const temp = item;
-            // console.log(item);
+      //   <div className="container">
+      //     {array.map(function (item) {
+      //       const temp = item;
+      //       // console.log(item);
+
+      //       const [one, two] = temp;
+      //       return (
+      //         <SearchingTiles type={LinearSearch} index={two} value={one} />
+      //       );
+      //     })}
+      //     {/* { array.map((index,value)=>
+      //      (
+      //       <SearchingTiles index={index}
+      //      value={value}
+      //       />
+      //      ))
+      //      } */}
+      //   </div>
+      // </div>
+      (
+        <div className='jumbotron jumbotron-fluid bg-white'>
+          <center>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm-4'></div>
+                <div className='input-group col-sm-4'>
+                  <input
+                    type='number'
+                    id='target'
+                    className='mr-2 form-control'
+                    placeholder='Element to be searched'
+                  />
+                  <div className='input-group-append'>
+                    <button
+                    className="btn btn-outline-primary"
+                      onClick={() => this.LinearSearch()}
+                     
+                      type='button'
+                      id='binarySearchBtn'
+                      disabled={start&&!completed?true:false}
+                    >
+                      Search
+                    </button>
+                    <button
+                    className="btn btn-outline-primary"
+                      onClick={() => this.
+                      
+                      Arrayreset()}
+                      
+                      id='binarySearchResetArray'
+                      type='button'
+                      disabled={start && !completed?true:false}
+                    >
+                      Reset Array
+                    </button>
+                  </div>
+                </div>
+                <div className='col-sm-1 '></div>
+              </div>
+            </div>
+            <br />
+            <div className='container'>
+            {array.map(function (item) {
+             const temp = item;
+       // console.log(item);
 
             const [one, two] = temp;
-            return (
+             return (
               <SearchingTiles type={LinearSearch} index={two} value={one} />
             );
-          })}
-          {/* { array.map((index,value)=>
-           (
-            <SearchingTiles index={index}
-           value={value}
-            />
-           ))
-           } */}
+             })}
+            </div>
+            {completed ? (
+              found ? (
+                <p className='textmessage'>{message}</p>
+              ) : (
+                <p className='textmessage'>{message}</p>
+              )
+            ) : null}
+          </center>
         </div>
-      </div>
-    );
+      
+    ));
+              
   }
 }

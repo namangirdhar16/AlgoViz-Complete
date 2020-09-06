@@ -5,7 +5,7 @@ import { RandomInt } from './RandomInt';
 import './Searching.css';
 
 const ARRAY_BARS = 19;
-const BASE_COLOR = 'purple';
+const BASE_COLOR = 'blue';
 const FOUND_COLOR = '#32CD32';
 const NOT_FOUND_COLOR = 'red';
 const ANIMATION_SPEED_SECONDS = 3;
@@ -76,13 +76,14 @@ class BinarySearch extends Component {
   boundHighlight(start, end, arrayBars) {
     for (let i = start; i <= end; i++) {
       setTimeout(() => {
-        arrayBars[i].style.backgroundColor = "red";
+        arrayBars[i].classList.add("grad");
       }, i * 100);
     }
   }
 
   tilesReset(arrayBars) {
     for (let i = 0; i < arrayBars.length; i++) {
+      arrayBars[i].classList.remove("grad");
       arrayBars[i].style.backgroundColor = BASE_COLOR;
     }
   }
@@ -189,7 +190,7 @@ class BinarySearch extends Component {
                 <div className='input-group-append'>
                   <button
                     onClick={() => this.binarySearch()}
-                    className='ui olive button'
+                   className="btn btn-outline-primary"
                     type='button'
                     id='binarySearchBtn'
                     disabled={!start ? false : true}
@@ -198,7 +199,7 @@ class BinarySearch extends Component {
                   </button>
                   <button
                     onClick={() => this.resetArray()}
-                    className='ui violet button'
+                     class="btn btn-outline-primary"
                     id='binarySearchResetArray'
                     type='button'
                     disabled={disabled}

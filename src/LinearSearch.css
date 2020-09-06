@@ -1,13 +1,14 @@
-.linear-array-bar {
-    background-color: purple;
-    display: inline-block;
-    margin: 5px;
-    color: #fff;
-    width: 60px;
-     height:60px;
-    text-align: center;
-    padding: 8px;
-    border-radius:42 px;
+ 
+ .linear-array-bar {
+  background-color: blue;
+  display: inline-block;
+  margin: 5px;
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 3px;
+    
   }
   @keyframes animate {
     0% {
@@ -25,7 +26,7 @@
     background-color: white;
     color: #000;
     margin-top: 10px;
-    border-radius:22px;
+    border-radius:2px;
     height: 30px;
     display: inline-block;
     width: 30px;
@@ -45,4 +46,6 @@
     /* animation-iteration-count: infinite; */
     /* animation-play-state: running; */
   }
-  
+  .grad {
+    background-image: linear-gradient(red, yellow);
+  }
