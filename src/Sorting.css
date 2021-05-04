@@ -1,0 +1,25 @@
+.array-bar{
+    margin:0 1px;
+    
+    display:inline-block;
+    width: 10px;
+    background-color: #0033FF;
+    border-radius: 5px;
+}
+.array-container{
+
+    margin-top:100px;
+    margin-left:100px;
+}
+.center{
+    /* text-align:justify; */
+    margin-left:200px;
+}
+
+/* .back{
+    display:inline-block;
+    color:#00FFFF;
+} */
+*{
+    background-repeat: no-repeat;
+}

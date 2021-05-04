@@ -1,15 +1,19 @@
-import React from "react";
 
-//import "./bootstrap.min.css";
-import "./App.css";
-import { NavLink } from "react-router-dom";
-export default  function Algolist()
-{
-  return (
-  <div className='container mt-20'>
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './App.css';
+export default class Algolist extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className='container mt-20'>
         <br />
         <br />
-        <table className='ui selectable inverted violet table center'>
+        <table className='ui selectable inverted violet table'>
           <thead>
             <tr>
               <th>Algorithm Category</th>
@@ -17,6 +21,7 @@ export default  function Algolist()
             </tr>
           </thead>
           <tbody>
+            
             <tr>
               <td>Linear Search</td>
               <td className='right aligned'>
@@ -27,7 +32,6 @@ export default  function Algolist()
             </tr>
             <tr>
               <td>Binary Search</td>
-
               <td className='right aligned'>
                 <NavLink to='/searching'>
                   <code>/Binary Search</code>
@@ -35,16 +39,26 @@ export default  function Algolist()
               </td>
             </tr>
             <tr>
-              <td>mores</td>
-
+              <td>Sorting Algorithms</td>
               <td className='right aligned'>
-              
-                  <p>coming soon</p>
-               
+                <NavLink to='/sorting'>
+                  <code>/Sorting</code>
+                </NavLink>
               </td>
             </tr>
+            <tr>
+              <td>Path Finder</td>
+              <td className='right aligned'>
+                <NavLink to='/pathfinder'>
+                  <code>/PathFinder</code>
+                </NavLink>
+              </td>
+            </tr>
+            <br />
           </tbody>
         </table>
       </div>
     );
-};
+  }
+}
+

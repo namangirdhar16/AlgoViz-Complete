@@ -1,4 +1,4 @@
- 
+
  .linear-array-bar {
   background-color: blue;
   display: inline-block;
@@ -15,11 +15,13 @@
       transform: scale3d(1, 1, 1);
     }
     50% {
+      rotate: 10;
       transform: scale3d(1.3, 1.3, 1.3);
     }
     100% {
       transform: scale3d(1, 1, 1);
     }
+    
   }
   .linear-array-bar span {
     padding: 3px;

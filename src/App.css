@@ -1,5 +1,10 @@
-.center{
-    margin-top:200px;
-    justify-content: center;
+td{
     color:white;
+}
+th{
+    color:white;
+}
+div table{
+    
+    justify-content:center;
 }

@@ -1,8 +1,10 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import "./bootstrap.min.css";
-import "./cover.css";
+import './About.css';
 
+//import "./cover.css";
+//import "./bootstrap.min.css"
+import MyCarousel from "./MyCarousel.js";
 export default class Menu extends React.Component {
   constructor(props)
   {
@@ -11,46 +13,50 @@ export default class Menu extends React.Component {
   }
   render()
   {
-    return (
-      <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+   
+return(
+  <>
+  
+    <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header className="masthead mb-auto">
-    <div className="inner container ">
+    <div className="inner">
       <h3 className="masthead-brand">AlgoViz</h3>
       <nav className="nav nav-masthead justify-content-center">
-        <a className="nav-link active" href="/">Home</a>
-        {/* <a className="nav-link" href="#">Features</a> */}
-        <NavLink className="nav-link" to="/searching">Searching </NavLink>
-        <a className="nav-link" href="/algolist"> Algortihms</a>
+        <NavLink to="/" className="nav-link active" >Home</NavLink>
+        <NavLink to="/algolist" className="nav-link" >Algorithms</NavLink>
+        {/* <NavLink to="/about" className="nav-link">About </NavLink> */}
+        <NavLink to ="/searching" className="nav-link" >Searching</NavLink>
+        <NavLink to ="/sorting" className="nav-link" >Sorting</NavLink>
+        
       </nav>
     </div>
   </header>
-
+  
   <main role="main" className="inner cover">
-    <h1 className="cover-heading">Vizualize your way to algorithms.</h1>
-    <p className="lead">AlgoViz is a  simple and elegant web app that helps in visualising algorithms
-    ,try it and learn in a unique way.
-    </p>
-    <p className="lead">
-      {/* <a href="#" className="btn btn-lg btn-secondary headColor"> */}
-                  <NavLink to ="/algolist" className="btn btn-lg btn-secondary headColor">Click to Algortihms</NavLink>
-                  
-                  {/* </a> */}
-    </p>
+    <h1 className="cover-heading font hello">Visualize Your Way to Algorithms.</h1>
+    
+    <p className="lead font2">AlgoViz is a simple and elegant web app that helps in visualising algorithms ,try it and learn in a unique way.</p>
+    
+    <NavLink to="/algolist" className="btn btn-lg btn-secondary headColor button2" >Click to Algortihms</NavLink>
+    {/* <MyCarousel /> */}
+    {/* <div class="button_cont" align="center"><NavLink to='/algolist' >Click to Algorithms</NavLink></div> */}
   </main>
-
   <footer className="mastfoot mt-auto">
-    <div className="inner">
-      <p>Made with peace ' ^ - ^ ' <a href="https://twitter.com/mdo">&copy; algoviz</a>.</p>
-    </div>
+   
+      <p>Made with peace <a href="/">Algoviz</a>, by <a href="#">Naman & Karan</a>.</p>
+    
   </footer>
-</div>
+  </div>
+  
+  </>
 
-    );
+);
+
   }
 };
 // import React, { Component } from "react";
 // import styles from "./styles/FlexDemo.module.css";
-// export default class Menu extends Component {
+// export default className Menu extends Component {
 //     render() {
 //         return (
 //             <div className={styles.container}>

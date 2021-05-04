@@ -38,7 +38,7 @@ export default class LinearSearch extends React.Component {
   linearSearchAnimations = (array, target) => {
     let animations = [];
     for (let i = 0; i < array.length; i++) {
-      const [ele,index,found]=array[i];
+      let [ele,index,found]=array[i];
        found=false;
        index=1;
       const tar = parseInt(target);
@@ -116,7 +116,7 @@ export default class LinearSearch extends React.Component {
       const barStyle=bar.style;
      if(found)
      {  
-      msg= msg = `${target} found at index ${mid}`;
+      msg= msg = `${target} found at index ${index}`;
      setTimeout(()=>{
      this.setState(
        { 
@@ -271,7 +271,7 @@ export default class LinearSearch extends React.Component {
 
             const [one, two] = temp;
              return (
-              <SearchingTiles type={LinearSearch} index={two} value={one} />
+              <SearchingTiles type={`LinearSearch`} index={two} value={one} />
             );
              })}
             </div>
@@ -284,7 +284,7 @@ export default class LinearSearch extends React.Component {
             ) : null}
           </center>
         </div>
-      
+    
     ));
               
   }

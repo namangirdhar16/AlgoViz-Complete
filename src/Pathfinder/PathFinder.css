@@ -1,0 +1,19 @@
+.grid {
+  margin: 100px 0 0;
+}
+.position {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 10px;
+}
+.red {
+  margin-right: 10px;
+  background-color: red;
+}
+.green {
+  margin-right: 10px;
+  background-color: green;
+}
+.align {
+  justify-content: center;
+}

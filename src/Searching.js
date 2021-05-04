@@ -5,7 +5,7 @@ import "./Searching.css";
 class Searching extends Component {
   render() {
     return (
-      <div>
+      <div className="container " style={{ marginLeft:`${150}px`}}>
         <br />
         <h1 class="ui horizontal divider header" style={{textAlign:"center"}}>Linear Search</h1>
         <LinearSearch />
